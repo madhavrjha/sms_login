@@ -26,18 +26,38 @@
       <h2><i class="fa-solid fa-child fa-2x"></i> Login as Parent</h2>
     </header>
 
-    <section id="login">
+    <!-- Parent Login Box -->
+    <section class="login-box" id="parent-login-box">
       <form action="">
         <label for="phone">Enter Registered Phone Number:</label>
         <input type="text" placeholder="Enter Phone">
         <span>please, enter without country code</span>
+        <!-- Captcha will be Here -->
         <button type="submit">Get OTP</button>
       </form>
 
       <article>
-        <span>not registered? <a href="./register_parent.html">click here to register</a></span>
+        <span>not registered? <a href="#" id="parent-register-btn">click here to register</a></span>
         <p>OR</p>
         <a href="./staff.html"><span>login as staff</span></a>
+      </article>
+
+    </section>
+
+    <!-- parent Registration Box -->
+    <section class="login-box register hidden" id="parent-register-box">
+      <form action="">
+        <label for="phone">Parent National Identity Number:</label>
+        <input type="text" placeholder="Parent National ID Number">
+
+        <label for="phone">Learner National Identity Number:</label>
+        <input type="text" placeholder="Learner National ID Number">
+
+        <button type="submit">Register</button>
+      </form>
+
+      <article>
+        <span>already registered? <a href="#" id="parent-login-btn">click here to login</a></span>
       </article>
 
     </section>

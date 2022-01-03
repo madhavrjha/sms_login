@@ -12,12 +12,17 @@ body {
   line-height: 1.5;
   width: 100%;
   min-height: 100vh;
+  padding: 1rem;
   background: url("../img/bg.webp") no-repeat center center / cover;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Box */
@@ -119,21 +124,21 @@ body {
 
 /* login */
 
-#login {
+.login-box {
   padding: 1rem 2rem;
 }
 
-#login form {
+.login-box form {
   padding: 0;
 }
 
-#login form * {
+.login-box form * {
   display: block;
   width: 80%;
   margin: auto;
 }
 
-#login form label {
+.login-box form label {
   text-align-last: left;
   color: #333;
   font-size: 1rem;
@@ -143,7 +148,7 @@ body {
   padding-bottom: 5px;
 }
 
-#login form input {
+.login-box form input {
   padding: 0.7rem 1rem;
   border: none;
   font-size: 1rem;
@@ -152,15 +157,15 @@ body {
   border-radius: 5px;
 }
 
-#login form input:focus {
+.login-box form input:focus {
   box-shadow: 0 0 3px 1px rgba(0 0 0 / 40%);
 }
 
-#login form input::placeholder {
+.login-box form input::placeholder {
   color: #333;
 }
 
-#login form span {
+.login-box form span {
   font-size: 0.9rem;
   text-align-last: left;
   padding-left: 5px;
@@ -168,7 +173,7 @@ body {
   margin-bottom: 1rem;
 }
 
-#login button {
+.login-box button {
   display: block;
   margin-top: 10px;
   padding: 0.5rem 1rem;
@@ -184,41 +189,41 @@ body {
   transition: all 0.6s;
 }
 
-#login button:hover {
+.login-box button:hover {
   transform: scale(0.98);
   opacity: 0.8;
 }
 
-#login article {
+.login-box article {
   margin-top: 1rem;
   text-align: center;
   font-size: 0.9rem;
 }
 
-#login article hr {
+.login-box article hr {
   width: 30%;
 }
 
-#login article p {
+.login-box article p {
   text-align: center;
   font-size: 1rem;
   padding: 10px 0;
 }
 
-#login article p,
-#login article a,
-#login article span {
+.login-box article p,
+.login-box article a,
+.login-box article span {
   color: #444;
   text-decoration: none;
 }
 
-#login article a:hover {
+.login-box article a:hover {
   text-decoration: underline;
 }
 
 /* Register */
 
-#login.register input {
+.login-box.register input {
   margin-bottom: 1rem;
 }
 
@@ -255,11 +260,11 @@ body {
     padding-top: 1rem !important;
   }
 
-  #login {
+  .login-box {
     padding: 10px;
   }
 
-  #login form * {
+  .login-box form * {
     width: 90%;
   }
 }
