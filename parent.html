@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
   <link rel="stylesheet" href="./css/style.css">
@@ -28,13 +29,34 @@
 
     <!-- Parent Login Box -->
     <section class="login-box" id="parent-login-box">
-      <form action="">
+
+      <!-- Parent Login Form for Phone Number -->
+      <form action="" id="parent-login-form">
         <label for="phone">Enter Registered Phone Number:</label>
         <input type="text" placeholder="Enter Phone">
         <span>please, enter without country code</span>
         <!-- Captcha will be Here -->
+
+        <!-- Error Message [Hidden] -->
+        <p class="alert alert-danger hidden">Unregistered Phone Number</p>
+
         <button type="submit">Get OTP</button>
       </form>
+
+      <!-- Parent OTP Form -->
+      <form action="" id="parent-otp-form" class="hidden">
+        <label for="phone">Enter Received OTP:</label>
+        <input type="text" placeholder="Enter OTP">
+        <!-- Captcha will be Here -->
+
+        <!-- Error Message [Hidden] -->
+        <p class="mt-1 alert alert-danger hidden"></p>
+
+        <button type="submit">Verify OTP</button>
+      </form>
+
+
+
 
       <article>
         <span>not registered? <a href="#" id="parent-register-btn">click here to register</a></span>
