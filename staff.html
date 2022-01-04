@@ -29,12 +29,31 @@
     </header>
 
     <section class="login-box">
-      <form action="">
+
+      <!-- Staff Login Form for Phone Number -->
+      <form action="" id="staff-login-form">
         <label for="phone">Enter Registered Phone Number:</label>
         <input type="text" placeholder="Enter Phone">
         <span>please, enter without country code</span>
+        <!-- Captcha will be Here -->
+
+        <!-- Error Message [Hidden] -->
+        <p class="alert alert-danger hidden">Unregistered Phone Number</p>
         <button type="submit">Get OTP</button>
       </form>
+
+      <!-- Staff OTP Form -->
+      <form action="" id="staff-otp-form" class="hidden">
+        <label for="phone">Enter Received OTP:</label>
+        <input type="text" placeholder="Enter OTP">
+
+
+        <!-- Error Message [Hidden] -->
+        <p class="mt-1 alert alert-danger hidden"></p>
+
+        <button type="submit">Verify OTP</button>
+      </form>
+
 
       <article>
         <p>OR</p>
@@ -51,7 +70,110 @@
 
   </div>
 
+  <script>
 
+
+    // Getting Another Form After Phone Number [Parent]
+
+    const staffLoginForm = document.querySelector('#staff-login-form');
+    const staffOTPForm = document.querySelector('#staff-otp-form');
+
+    const staffInputBox = document.querySelector('#staff-login-form input');
+    const staffOTPBox = document.querySelector('#staff-otp-form input');
+
+    const staffErrorBox = document.querySelector('#staff-login-form p.alert');
+    const staffOTPErrorBox = document.querySelector('#staff-otp-form p.alert');
+
+    const staffOTPSubmitBtn = document.querySelector('#staff-otp-form button');
+
+
+
+    staffLoginForm.addEventListener('submit', e => {
+      e.preventDefault();
+      // Validation Code 
+
+      let userPhoneNumber = staffInputBox.value;
+      console.log(userPhoneNumber);
+
+      /*
+    
+        Write Phone Number
+        Validation Code Here
+        ....
+        ....
+        ....
+    
+      */
+
+      let hasError = false;
+      let errorMessage = 'This is Dynamic Error Message';
+
+      if (hasError) {
+        staffErrorBox.innerHTML = `${errorMessage}`;
+        staffErrorBox.classList.remove('hidden');
+
+        // Disappear the Error Message after 5 seconds
+        setTimeout(() => staffErrorBox.classList.add('hidden'), 5000);
+
+      }
+      else {
+        // Hide Login Form
+        staffLoginForm.classList.add('hidden');
+        document.querySelector('article span').classList.add('hidden');
+
+        // Show OTP Form
+        staffOTPForm.classList.remove('hidden');
+
+        staffOTPForm.addEventListener('submit', e => {
+          e.preventDefault();
+
+          let OTPByUser = staffOTPBox.value;
+          console.log(OTPByUser);
+
+          /*
+  
+            Write OTP
+            Validation Code Here
+            ....
+            ....
+            ....
+  
+          */
+
+          let hasError = false;
+          let errorMessage = 'Invalid OTP';
+
+          if (hasError) {
+            staffOTPErrorBox.innerHTML = `${errorMessage}`;
+            staffOTPErrorBox.classList.remove('hidden');
+
+            // Disappear the Error Message after 5 seconds
+            setTimeout(() => staffOTPErrorBox.classList.add('hidden'), 5000);
+          }
+          else {
+            // Add Loading Icon in Submit Button
+            staffOTPBox.setAttribute('readonly', true);
+            staffOTPSubmitBtn.setAttribute('disabled', true);
+            staffOTPSubmitBtn.innerHTML = `<i class="fa-solid fa-spinner rotate"></i>`;
+
+            // Redirect to Home Page
+
+            /*
+  
+              Write Login
+              Validation Code Here
+              ....
+              ....
+              ....
+  
+            */
+          }
+        });
+      }
+    });
+
+
+  </script>
 
   <script src="./js/main.js"></script>
 
