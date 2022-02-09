@@ -20,7 +20,6 @@
 
   <div class="box">
 
-
     <header>
       <img src="https://schoolmanagement.co.za/sms/public/uploads/settings/8967914b0e044c92cbb39557beb8f1d6.png"
         height="50px">
@@ -32,26 +31,33 @@
 
       <!-- Staff Login Form for Phone Number -->
       <form action="" id="staff-login-form">
-        <label for="phone">Enter Registered Phone Number:</label>
-        <input type="text" placeholder="Enter Phone">
-        <span>please, enter without country code</span>
+        <label for="role">Role*</label>
+        <select name="" id="">
+          <option value="">Choose..</option>
+          <option value="">Principal</option>
+          <option value="">Teacher</option>
+        </select>
+
+        <label for="staff-dob">Date Of Birth*</label>
+        <input type="date" name="" id="">
+
         <!-- Captcha will be Here -->
 
         <!-- Error Message [Hidden] -->
         <p class="alert alert-danger hidden">Unregistered Phone Number</p>
-        <button type="submit">Get OTP</button>
+        <button type="submit">Submit</button>
       </form>
 
       <!-- Staff OTP Form -->
       <form action="" id="staff-otp-form" class="hidden">
-        <label for="phone">Enter Received OTP:</label>
-        <input type="text" placeholder="Enter OTP">
+        <label for="phone">PIN*</label>
+        <input type="text" placeholder="Enter PIN">
 
 
         <!-- Error Message [Hidden] -->
         <p class="mt-1 alert alert-danger hidden"></p>
 
-        <button type="submit">Verify OTP</button>
+        <button type="submit">Verify PIN</button>
       </form>
 
 

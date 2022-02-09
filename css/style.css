@@ -163,16 +163,17 @@ body {
   padding-bottom: 5px;
 }
 
-.login-box form input {
+.login-box form :is(input, select) {
   padding: 0.7rem 1rem;
   border: none;
   font-size: 1rem;
   outline: none;
   background: rgba(0 0 0 / 10%);
   border-radius: 5px;
+  margin-bottom: 0.7rem;
 }
 
-.login-box form input:focus {
+.login-box form :is(input, select):focus {
   box-shadow: 0 0 3px 1px rgba(0 0 0 / 40%);
 }
 
